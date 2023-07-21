@@ -1,0 +1,12 @@
+{:lib com.github.ivarref/clj-test-ivarref
+ ;; You could also specify a fixed version like "0.1.2" if you want.
+ :version "0.1.{{git/commit-count}}"
+ :documents [#_{:file "CHANGELOG.adoc"
+                :match "Unreleased"
+                :action :append-after
+                :text "\n== {{version}} ({{now/yyyy}}-{{now/mm}}-{{now/dd}})"}
+             {:file "README.md"
+              :match "com\\.github\\.ivarref/clj-test-ivarref"
+              :action :replace
+              :keep-indent? true
+              :text "com.github.ivarref/clj-test-ivarref :git/tag \"{{version}}\" :git/sha \"{{git/head-short-sha}}\""}]}
